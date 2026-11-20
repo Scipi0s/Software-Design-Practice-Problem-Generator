@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'dart:math';
-import 'package:sd_problem_generator/main.dart';
+import 'package:sd_problem_generator/problem_repository.dart';
+import 'package:sd_problem_generator/problem.dart';
+//import 'package:sd_problem_generator/main.dart';
 
 class ProblemRandomizerPage extends StatefulWidget {
   const ProblemRandomizerPage({super.key});
@@ -79,5 +81,17 @@ class ListRandomizer {
   (String, String) selectRandomItem() {
     int randomIndex = _random.nextInt(_scenarioList.length);
     return _scenarioList[randomIndex];
+  }
+}
+
+class ProblemRandomizer {
+  late ProblemRepository problemRepo;
+  final Random _random = Random();
+
+  Problem selectRandomProblem(){
+    List<Problem> problems = problemRepo.getProblems();
+    int randomIndex = _random.nextInt(problems.length);
+
+    return problems[randomIndex];
   }
 }

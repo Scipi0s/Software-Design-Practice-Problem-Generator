@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:sd_problem_generator/main.dart';
+//import 'package:sd_problem_generator/main.dart';
 
 class ProblemGeneratorPage extends StatefulWidget {
   const ProblemGeneratorPage({super.key});
